@@ -38,7 +38,9 @@ Ao final da execução, são exibidos **gráficos comparativos** de tempo de exe
 
 ## 🖼️ Interface Gráfica
 
-> ⚠️ *[Inserir imagem da tela inicial da aplicação aqui]*
+ <p align="center">
+  <img src="images/interface.png" alt="Interface Gráfica" width="400"/>
+</p>
 
 A interface permite:
 - Selecionar o arquivo com os sites
@@ -55,30 +57,34 @@ A abordagem multithread realiza a verificação dos sites de forma concorrente, 
 
 Na execução monothread (sequencial), cada site é verificado um de cada vez, e o tempo total é equivalente à soma dos tempos de resposta individuais. Isso gera um gargalo evidente, especialmente quando há sites com tempo de resposta alto ou instável.
 
-> ⚠️ *[Inserir gráfico comparativo de tempo]*
+ <p align="center">
+  <img src="images/time_comparison.png" alt="Tempo de Execução" width="800"/>
+</p>
 
 --- 
 
 ### 💻 Consumo da CPU
 
-A abordagem monothread subutiliza o processador, executando os pings de forma linear. Já a multithread utiliza mais da CPU, concluindo o processo mais rapidamente.
 Durante a execução monothread, a CPU permanece por longos períodos em estado de espera (I/O blocking), aguardando a resposta de cada site antes de prosseguir. Isso resulta em uma baixa utilização do processador, visto que a maior parte do tempo o programa está ocioso, esperando o retorno das chamadas de rede.
 
 Por outro lado, a abordagem multithread é capaz de explorar melhor a capacidade da CPU, mantendo-a ativa com múltiplas threads que gerenciam as requisições de forma paralela. Cada thread atua de forma independente, e enquanto uma aguarda a resposta de um site, outras continuam processando normalmente.
 
 
-> ⚠️ *[Inserir gráfico comparativo de uso da CPU]*
+ <p align="center">
+  <img src="images/cpu_comparison.png" alt="Consumo de CPU" width="800"/>
+</p>
 
 ---
 
 ### 🧠 Consumo de Memória RAM
 
-Devido à execução simultânea de várias threads, a abordagem multithread consome mais memória durante o processo.
 O modelo multithread, por sua natureza, aloca mais estruturas simultâneas em memória: cada thread possui seu próprio contexto de execução, incluindo pilha, variáveis locais e buffers temporários de rede. Por isso, é esperado que haja um aumento no consumo de memória RAM quando comparado à versão sequencial.
 
 Já no modo monothread, como apenas uma tarefa é processada por vez, o uso de memória permanece baixo e constante ao longo da execução.
 
-> ⚠️ *[Inserir gráfico comparativo de uso de RAM]*
+ <p align="center">
+  <img src="images/mem_comparison.png" alt="Consumo de Memória" width="800"/>
+</p>
 
 ---
 
