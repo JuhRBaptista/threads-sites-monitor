@@ -30,9 +30,9 @@ Ao final da execução, são exibidos **gráficos comparativos** de tempo de exe
 - Upload de arquivos `.txt` com a lista de sites a serem verificados
 - Execução do monitoramento via **Monothread** ou **Multithread**
 - Comparação visual de:
-  - ⏱️ Tempo de execução
-  - 💻 Uso da CPU
-  - 🧠 Consumo de Memória RAM
+  - Tempo de execução
+  - Uso da CPU
+  - Consumo de Memória RAM
 
 ---
 
@@ -51,7 +51,7 @@ A interface permite:
 
 ## 📊 Resultados e Comparações
 
-### ⏱️ Tempo de Execução
+### Tempo de Execução
 
 A abordagem multithread realiza a verificação dos sites de forma concorrente, ou seja, várias requisições são enviadas ao mesmo tempo utilizando múltiplas threads. Isso reduz drasticamente o tempo total de execução, já que o programa não precisa aguardar o término de uma requisição para iniciar a próxima. Em vez disso, o tempo final tende a ser determinado pelo site com a maior latência, tornando a operação muito mais eficiente para listas longas de URLs.
 
@@ -63,7 +63,7 @@ Na execução monothread (sequencial), cada site é verificado um de cada vez, e
 
 --- 
 
-### 💻 Consumo da CPU
+### Consumo da CPU
 
 Durante a execução monothread, a CPU permanece por longos períodos em estado de espera (I/O blocking), aguardando a resposta de cada site antes de prosseguir. Isso resulta em uma baixa utilização do processador, visto que a maior parte do tempo o programa está ocioso, esperando o retorno das chamadas de rede.
 
@@ -76,7 +76,7 @@ Por outro lado, a abordagem multithread é capaz de explorar melhor a capacidade
 
 ---
 
-### 🧠 Consumo de Memória RAM
+### Consumo de Memória RAM
 
 O modelo multithread, por sua natureza, aloca mais estruturas simultâneas em memória: cada thread possui seu próprio contexto de execução, incluindo pilha, variáveis locais e buffers temporários de rede. Por isso, é esperado que haja um aumento no consumo de memória RAM quando comparado à versão sequencial.
 
