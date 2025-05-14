@@ -1,5 +1,4 @@
-# 🧵 threads-sites-monitor
-## Monitoramento de Sites Utilizando Threads em Python
+# 🧵 Monitoramento de Sites Utilizando Threads em Python
 
 Este repositório apresenta os benefícios do uso de **Threads** em comparação com uma abordagem **sequencial** tradicional, por meio de uma aplicação Python que monitora o status de uma lista de sites.
 
